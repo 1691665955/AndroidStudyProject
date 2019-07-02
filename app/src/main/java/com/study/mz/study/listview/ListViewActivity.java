@@ -1,6 +1,7 @@
 package com.study.mz.study.listview;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +24,9 @@ public class ListViewActivity extends Activity {
         mLv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(ListViewActivity.this, "点击 pos:" + i, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ListViewActivity.this, "点击 pos:" + i, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ListViewActivity.this,MyListDetailActivity.class);
+                startActivity(intent);
             }
         });
         mLv1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
