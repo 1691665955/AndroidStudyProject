@@ -30,12 +30,12 @@ public class ButtonActivity extends AppCompatActivity {
         mTextView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ButtonActivity.this,"文字1被点击了",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ButtonActivity.this, "文字1被点击了", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void showToast(View view){
-        Toast.makeText(this,"btn4被点击了",Toast.LENGTH_SHORT).show();
+    public void showToast(View view) {
+        Toast.makeText(this, "btn4被点击了", Toast.LENGTH_SHORT).show();
     }
 }

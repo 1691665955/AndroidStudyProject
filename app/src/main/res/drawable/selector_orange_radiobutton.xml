@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true">
+    <item android:state_checked="true" >
         <shape>
-            <solid android:color="#cc7a00"/>
+            <solid android:color="#aa6600"/>
             <corners android:radius="5dp"/>
         </shape>
+        <color android:color="@color/colorWhite"/>
     </item>
-    <item android:state_pressed="false">
+    <item android:state_checked="false">
         <shape>
-            <solid android:color="#ff9900"/>
+            <stroke android:color="#aa6600" android:width="1dp"/>
             <corners android:radius="5dp"/>
         </shape>
+        <color android:color="@color/colorGrayDark"/>
     </item>
 </selector>

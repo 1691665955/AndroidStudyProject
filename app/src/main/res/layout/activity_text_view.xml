@@ -10,74 +10,73 @@
         android:id="@+id/tv_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="天哥在奔跑"
         android:textColor="#000000"
-        android:textSize="24sp"
-        android:padding="10dp"/>
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_2"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:maxLines="1"
+        android:layout_marginTop="10dp"
         android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="10dp"
         android:text="天哥在奔跑"
         android:textColor="#000000"
-        android:textSize="24sp"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"/>
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="筛选"
-        android:textColor="#000000"
+        android:layout_marginTop="10dp"
         android:drawableRight="@drawable/down_circle"
         android:drawablePadding="5dp"
-        android:textSize="24sp"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:text="筛选"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="天哥在奔跑"
         android:textColor="#000000"
-        android:textSize="24sp"
-        android:padding="10dp"/>
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="天哥在奔跑"
         android:textColor="#000000"
-        android:textSize="24sp"
-        android:padding="10dp"/>
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="天哥在奔跑"
         android:textColor="#000000"
-        android:textSize="24sp"
-        android:padding="10dp"/>
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="天哥在奔跑天哥在奔跑天哥在奔跑天哥在奔跑"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:padding="10dp"
-        android:singleLine="true"
         android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        />
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:text="天哥在奔跑天哥在奔跑天哥在奔跑天哥在奔跑"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 </LinearLayout>
