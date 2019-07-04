@@ -32,11 +32,11 @@
         android:text="RadioButton" />
 
     <Button
-        android:id="@+id/btn_CkeckBox"
+        android:id="@+id/btn_CheckBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:text="CkeckBox" />
+        android:text="CheckBox" />
 
     <Button
         android:id="@+id/btn_ImageView"
@@ -46,10 +46,17 @@
         android:text="ImageView" />
 
     <Button
-        android:id="@+id/btn_Listview"
+        android:id="@+id/btn_ListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:text="Listview" />
+        android:text="ListView" />
+
+    <Button
+        android:id="@+id/btn_GridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="GridView" />
 
 </LinearLayout>

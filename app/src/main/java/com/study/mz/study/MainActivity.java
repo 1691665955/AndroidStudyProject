@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.study.mz.study.gridview.GridViewActivity;
 import com.study.mz.study.listview.ListViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnRadioButton;
     private Button mBtnCheckBox;
     private Button mBtnImageView;
-    private Button mBtnListview;
+    private Button mBtnListView;
+    private Button mBtnGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
         mBtnButton = findViewById(R.id.btn_Button);
         mBtnEditText = findViewById(R.id.btn_btn_EditText);
         mBtnRadioButton = findViewById(R.id.btn_RadioButton);
-        mBtnCheckBox = findViewById(R.id.btn_CkeckBox);
+        mBtnCheckBox = findViewById(R.id.btn_CheckBox);
         mBtnImageView = findViewById(R.id.btn_ImageView);
-        mBtnListview = findViewById(R.id.btn_Listview);
+        mBtnListView = findViewById(R.id.btn_ListView);
+        mBtnGridView = findViewById(R.id.btn_GridView);
         setListeners();
     }
 
@@ -43,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton.setOnClickListener(onclick);
         mBtnCheckBox.setOnClickListener(onclick);
         mBtnImageView.setOnClickListener(onclick);
-        mBtnListview.setOnClickListener(onclick);
+        mBtnListView.setOnClickListener(onclick);
+        mBtnGridView.setOnClickListener(onclick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -64,14 +68,17 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_RadioButton:
                     intent = new Intent(MainActivity.this, RadioButtonActivity.class);
                     break;
-                case R.id.btn_CkeckBox:
+                case R.id.btn_CheckBox:
                     intent = new Intent(MainActivity.this, CheckBoxActivity.class);
                     break;
                 case R.id.btn_ImageView:
                     intent = new Intent(MainActivity.this, ImageViewActivity.class);
                     break;
-                case R.id.btn_Listview:
+                case R.id.btn_ListView:
                     intent = new Intent(MainActivity.this, ListViewActivity.class);
+                    break;
+                case R.id.btn_GridView:
+                    intent = new Intent(MainActivity.this, GridViewActivity.class);
                     break;
             }
             startActivity(intent);
