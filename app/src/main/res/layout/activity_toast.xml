@@ -3,27 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <Button
-        android:id="@+id/btn_linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="列表视图"/>
 
     <Button
-        android:id="@+id/btn_hor"
+        android:id="@+id/btn_toast_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="水平滚动"/>
-
+        android:text="默认"/>
     <Button
-        android:id="@+id/btn_grid"
+        android:id="@+id/btn_toast_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="网格视图"/>
-
+        android:text="改变位置"/>
     <Button
-        android:id="@+id/btn_pu"
+        android:id="@+id/btn_toast_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="瀑布流"/>
+        android:text="带图片（自定义）"/>
+    <Button
+        android:id="@+id/btn_toast_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="封装过的Toast"/>
+
 </LinearLayout>

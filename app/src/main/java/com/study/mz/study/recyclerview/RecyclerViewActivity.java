@@ -14,6 +14,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private Button mBtnLinear;
     private Button mBtnHor;
     private Button mBtnGrid;
+    private Button mBtnPu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,15 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RecyclerViewActivity.this,GridRecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mBtnPu = findViewById(R.id.btn_pu);
+        mBtnPu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RecyclerViewActivity.this,PuRecycleViewActivity.class);
                 startActivity(intent);
             }
         });

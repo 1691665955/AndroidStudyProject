@@ -78,6 +78,22 @@
             android:textAllCaps="false"
             android:text="RecyclerView" />
 
+        <Button
+            android:id="@+id/btn_WebView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:text="WebView" />
+
+        <Button
+            android:id="@+id/btn_Toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:text="Toast" />
+
     </LinearLayout>
 
 </ScrollView>
