@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_dialog_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="样式一"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_dialog_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="样式二"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_dialog_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="样式三"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_dialog_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="样式四"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_dialog_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义样式"
+        android:textAllCaps="false"/>
+
+</LinearLayout>
