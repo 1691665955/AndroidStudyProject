@@ -102,6 +102,30 @@
             android:textAllCaps="false"
             android:text="AlertDialog" />
 
+        <Button
+            android:id="@+id/btn_Progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:text="Progress" />
+
+        <Button
+            android:id="@+id/btn_Dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:text="Dialog" />
+
+        <Button
+            android:id="@+id/btn_PopupWindow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:text="PopupWindow" />
+
     </LinearLayout>
 
 </ScrollView>
