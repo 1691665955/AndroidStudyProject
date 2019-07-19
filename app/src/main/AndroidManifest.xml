@@ -11,7 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PopupWindowActivity"></activity>
+        <activity android:name=".jump.BActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.test.BActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".jump.AActivity" />
+        <activity android:name=".LifeCycleActivity" />
+        <activity android:name=".PopupWindowActivity" />
         <activity android:name=".DialogActivity" />
         <activity android:name=".ProgressActivity" />
         <activity android:name=".MainActivity">

@@ -126,6 +126,22 @@
             android:textAllCaps="false"
             android:text="PopupWindow" />
 
+        <Button
+            android:id="@+id/btn_LifeCycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:text="LifeCycle" />
+
+        <Button
+            android:id="@+id/btn_Jump"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:text="Jump" />
+
     </LinearLayout>
 
 </ScrollView>
