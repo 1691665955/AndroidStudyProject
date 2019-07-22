@@ -29,17 +29,21 @@ public class SharePreferencesActivity extends AppCompatActivity {
         mBtnShow = findViewById(R.id.btn_show);
         mTvShow = findViewById(R.id.tv_show);
 
+        mSharePreferences = getSharedPreferences("data",MODE_PRIVATE);
+        mEditor = mSharePreferences.edit();
+
         mBtnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mEditor.putString("name",mEtName.getText().toString());
+                mEditor.apply();
             }
         });
 
         mBtnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mTvShow.setText(mSharePreferences.getString("name",""));
             }
         });
     }

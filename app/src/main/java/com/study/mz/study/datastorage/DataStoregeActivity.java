@@ -18,7 +18,9 @@ public class DataStoregeActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_storege);
         mBtnSharePreferences = findViewById(R.id.btn_sharedpreferences);
+        mBtnFile = findViewById(R.id.btn_file);
         mBtnSharePreferences.setOnClickListener(this);
+        mBtnFile.setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +29,9 @@ public class DataStoregeActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
             case R.id.btn_sharedpreferences:
                 intent = new Intent(this,SharePreferencesActivity.class);
+                break;
+            case R.id.btn_file:
+                intent = new Intent(this,FileActivity.class);
                 break;
         }
         startActivity(intent);

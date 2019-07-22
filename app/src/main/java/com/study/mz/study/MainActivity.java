@@ -1,7 +1,9 @@
 package com.study.mz.study;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         mBtnHandler = findViewById(R.id.btn_handler);
         mBtnData = findViewById(R.id.btn_data);
         setListener();
+
+        //获取读写权限
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
     }
 
     private void setListener() {
