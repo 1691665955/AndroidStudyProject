@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".datastorage.SharePreferencesActivity"></activity>
+        <activity android:name=".datastorage.DataStoregeActivity" />
+        <activity android:name=".HandlerActivity" />
+        <activity android:name=".EventActivity" />
+        <activity android:name=".fragment.ContainerActivity" />
         <activity android:name=".jump.BActivity">
             <intent-filter>
                 <action android:name="android.intent.action.test.BActivity" />
