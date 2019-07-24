@@ -10,12 +10,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.study.mz.study.boardcast.BoardcastActivity;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 import com.study.mz.study.datastorage.DataStoregeActivity;
 import com.study.mz.study.fragment.ContainerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mBtnUI,mBtnFragment,mBtnEvent,mBtnHandler,mBtnData;
+    private Button mBtnUI,mBtnFragment,mBtnEvent,mBtnHandler,mBtnData,mBtnBoardcast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnEvent = findViewById(R.id.btn_event);
         mBtnHandler = findViewById(R.id.btn_handler);
         mBtnData = findViewById(R.id.btn_data);
+        mBtnBoardcast = findViewById(R.id.btn_boardcast);
         setListener();
 
         //获取读写权限
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnEvent.setOnClickListener(onClick);
         mBtnHandler.setOnClickListener(onClick);
         mBtnData.setOnClickListener(onClick);
+        mBtnBoardcast.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -63,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_data:
                     intent = new Intent(MainActivity.this, DataStoregeActivity.class);
+                    break;
+                case R.id.btn_boardcast:
+                    intent = new Intent(MainActivity.this, LocalBoardcastActivity.class);
                     break;
             }
             startActivity(intent);
