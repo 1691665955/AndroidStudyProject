@@ -17,7 +17,7 @@ import com.study.mz.study.fragment.ContainerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mBtnUI,mBtnFragment,mBtnEvent,mBtnHandler,mBtnData,mBtnBoardcast;
+    private Button mBtnUI,mBtnFragment,mBtnEvent,mBtnHandler,mBtnData,mBtnBoardcast,mBtnHttp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnHandler = findViewById(R.id.btn_handler);
         mBtnData = findViewById(R.id.btn_data);
         mBtnBoardcast = findViewById(R.id.btn_boardcast);
+        mBtnHttp = findViewById(R.id.btn_http);
         setListener();
 
         //获取读写权限
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnHandler.setOnClickListener(onClick);
         mBtnData.setOnClickListener(onClick);
         mBtnBoardcast.setOnClickListener(onClick);
+        mBtnHttp.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -70,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_boardcast:
                     intent = new Intent(MainActivity.this, LocalBoardcastActivity.class);
+                    break;
+                case R.id.btn_http:
+                    intent = new Intent(MainActivity.this, HttpTestActivity.class);
                     break;
             }
             startActivity(intent);
