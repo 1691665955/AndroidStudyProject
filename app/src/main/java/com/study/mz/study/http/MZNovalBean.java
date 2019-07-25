@@ -1,8 +1,9 @@
 package com.study.mz.study.http;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -345,7 +346,13 @@ public class MZNovalBean {
 
     public static MZNovalBean parseBean(Map map) {
         Gson gson = new Gson();
-        MZNovalBean bean = gson.fromJson(map.toString(),MZNovalBean.class);
+        MZNovalBean bean = gson.fromJson(new JSONObject(map).toString(),MZNovalBean.class);
         return bean;
+    }
+
+    public static List<MZNovalBean> parseBeanList(List<Map> list) {
+        Gson gson = new Gson();
+        List<MZNovalBean> beanList = gson.fromJson(new JSONArray(list).toString(), new MZTypeToken<List<MZNovalBean>>(){}.getType());
+        return beanList;
     }
 }

@@ -77,7 +77,8 @@ public class HttpTestActivity extends AppCompatActivity implements View.OnClickL
                     public void onResponse(MZCommonJson data, String msg) {
                         if (msg.equals("ok")) {
                             List<Map> list = (List<Map>) data.getData();
-                            MZNovalBean novalBean = MZNovalBean.parseBean(list.get(0));
+                            List<MZNovalBean> novalBeans = MZNovalBean.parseBeanList(list);
+                            MZNovalBean novalBean = novalBeans.get(1);
                             mTvContent.setText(novalBean.getBookname());
                         } else {
                             ToastUtil.showMsg(HttpTestActivity.this,msg);
