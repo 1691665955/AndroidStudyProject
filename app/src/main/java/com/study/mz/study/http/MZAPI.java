@@ -37,11 +37,12 @@ public class MZAPI {
             public void onRequestSuccess(Response response) {
                 Log.d("MZAPI-Url",url);
                 Log.d("MZAPI-Params",logParams.toString());
+                Log.d("thread",Thread.currentThread().getName());
                 String data = "";
                 try {
                     data = response.body().string();
                     Log.d("MZAPI-data",data);
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -62,6 +63,19 @@ public class MZAPI {
 
     public static void novelApi(final MZAPICallback callback) {
         request("novelApi",null,callback);
+    }
+
+    /**
+     * 随机推荐热门段子
+     * @param type 1：全部 2：文字 3：图片 4：gif 5：视频
+     * @param page 页码
+     * @param callback 接口回调
+     */
+    public static void satinApi(int type, int page, final MZAPICallback callback) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("type",type);
+        params.put("page",page);
+        request("satinApi",params,callback);
     }
 
 }

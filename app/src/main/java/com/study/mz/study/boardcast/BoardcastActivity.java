@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -29,7 +30,13 @@ public class BoardcastActivity extends AppCompatActivity implements View.OnClick
         intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         intentFilter.addAction("com.study.mz.study.BroadcastTest");
-        myReceiver = new MyReceiver();
+        myReceiver = new MyReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                super.onReceive(context, intent);
+                Log.d("MyReceiver", "onReceive: 收到通知");
+            }
+        };
         registerReceiver(myReceiver,intentFilter);
     }
 
