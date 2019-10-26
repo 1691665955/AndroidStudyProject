@@ -1,25 +1,35 @@
 package com.study.mz.study.recyclerview;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.R;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 
-public class LinearRecyclerViewActivity extends AppCompatActivity {
+public class LinearRecyclerViewActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private RecyclerView mRvMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_recycler_view);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("LinearRecyclerView");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(LinearRecyclerViewActivity.this,getResources().getColor(R.color.colorPrimary),0);
+
         mRvMain = findViewById(R.id.rv_main);
         mRvMain.setLayoutManager(new LinearLayoutManager(LinearRecyclerViewActivity.this));
         mRvMain.addItemDecoration(new MyDecoration());

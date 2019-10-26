@@ -8,8 +8,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.widget.MZActionBar;
+
 public class ButtonActivity extends AppCompatActivity {
 
+    private MZActionBar mActionBar;
     private Button mButtonBtn3;
     private TextView mTextView1;
 
@@ -17,6 +21,11 @@ public class ButtonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("Button");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(ButtonActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mButtonBtn3 = findViewById(R.id.btn_3);
         mButtonBtn3.setOnClickListener(new View.OnClickListener() {

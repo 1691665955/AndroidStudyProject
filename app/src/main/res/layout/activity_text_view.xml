@@ -6,6 +6,11 @@
     android:orientation="vertical"
     tools:context=".TextViewActivity">
 
+    <com.mz.mzlibrary.widget.MZActionBar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/tv_1"
         android:layout_width="wrap_content"

@@ -1,18 +1,22 @@
 package com.study.mz.study.jump;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.Nullable;
+
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.R;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 import com.study.mz.study.util.ToastUtil;
 
-public class AActivity extends AppCompatActivity {
+public class AActivity extends MZBaseActivity {
+    private MZActionBar mActionBar;
     private Button mBtnJump1,mBtnJump2,mBtnJump3,mBtnJump4,mBtnJump5;
 
     @Override
@@ -20,6 +24,11 @@ public class AActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
         this.setTitle("A");
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("Jump");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(AActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnJump1 = findViewById(R.id.btn_jump1);
         mBtnJump2 = findViewById(R.id.btn_jump2);

@@ -2,10 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="15dp">
+    android:orientation="vertical">
+
+    <com.mz.mzlibrary.widget.MZActionBar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <GridView
+        android:padding="15dp"
         android:id="@+id/gv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

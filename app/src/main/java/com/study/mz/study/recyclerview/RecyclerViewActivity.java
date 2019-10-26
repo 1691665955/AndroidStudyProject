@@ -1,16 +1,19 @@
 package com.study.mz.study.recyclerview;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.R;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private Button mBtnLinear;
     private Button mBtnHor;
     private Button mBtnGrid;
@@ -20,6 +23,12 @@ public class RecyclerViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("RecyclerView");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(RecyclerViewActivity.this,getResources().getColor(R.color.colorPrimary),0);
+
         mBtnLinear = findViewById(R.id.btn_linear);
         mBtnLinear.setOnClickListener(new View.OnClickListener() {
             @Override

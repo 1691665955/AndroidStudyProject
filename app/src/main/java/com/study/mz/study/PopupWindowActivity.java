@@ -1,7 +1,5 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +7,15 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 import com.study.mz.study.util.ToastUtil;
 
-public class PopupWindowActivity extends AppCompatActivity {
+public class PopupWindowActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private Button mBtnPopup;
     private PopupWindow mPopupWindow;
 
@@ -20,6 +23,11 @@ public class PopupWindowActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popup_window);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("PopupWindow");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(PopupWindowActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnPopup = findViewById(R.id.btn_popup);
         mBtnPopup.setOnClickListener(new View.OnClickListener() {

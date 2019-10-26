@@ -1,7 +1,5 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -11,16 +9,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 import com.study.mz.study.util.ToastUtil;
 
-public class ToastActivity extends AppCompatActivity {
+public class ToastActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private Button mBtnToast1,mBtnToast2,mBtnToast3,mBtnToast4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toast);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("Toast");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(ToastActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnToast1 = findViewById(R.id.btn_toast_1);
         mBtnToast2 = findViewById(R.id.btn_toast_2);

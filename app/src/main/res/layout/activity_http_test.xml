@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HttpTestActivity"
-    android:padding="15dp">
+    tools:context=".HttpTestActivity">
+
+    <com.mz.mzlibrary.widget.MZActionBar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/btn_get"
@@ -14,7 +19,7 @@
         android:text="get请求"
         android:textSize="20sp"
         android:textColor="@color/colorBlack"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_bar"
         android:textAllCaps="false"/>
 
     <Button

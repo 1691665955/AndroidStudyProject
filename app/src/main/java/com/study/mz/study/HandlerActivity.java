@@ -8,16 +8,25 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.util.ToastUtil;
 
-public class HandlerActivity extends AppCompatActivity {
+public class HandlerActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("Handler");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(HandlerActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
 //        mHandler = new Handler();
 //        mHandler.postDelayed(new Runnable() {

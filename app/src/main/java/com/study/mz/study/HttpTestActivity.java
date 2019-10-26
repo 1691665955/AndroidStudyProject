@@ -5,26 +5,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.http.MZAPI;
 import com.study.mz.study.http.MZAPICallback;
 import com.study.mz.study.http.MZCommonJson;
-import com.study.mz.study.http.MZHttpCallback;
-import com.study.mz.study.http.MZHttpRequest;
 import com.study.mz.study.http.MZNovalBean;
 import com.study.mz.study.http.MZSatinBean;
 import com.study.mz.study.util.ToastUtil;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.Response;
 
+public class HttpTestActivity extends MZBaseActivity implements View.OnClickListener {
 
-public class HttpTestActivity extends AppCompatActivity implements View.OnClickListener {
-
+    private MZActionBar mActionBar;
     private Button mBtnGet, mBtnPost;
     private TextView mTvContent;
 
@@ -32,6 +29,12 @@ public class HttpTestActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http_test);
+
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("广播");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(HttpTestActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnGet = findViewById(R.id.btn_get);
         mBtnPost = findViewById(R.id.btn_post);

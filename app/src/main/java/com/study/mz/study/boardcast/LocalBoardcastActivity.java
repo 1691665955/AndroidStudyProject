@@ -11,10 +11,14 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.R;
 
-public class LocalBoardcastActivity extends AppCompatActivity implements View.OnClickListener {
+public class LocalBoardcastActivity extends MZBaseActivity implements View.OnClickListener {
 
+    private MZActionBar mActionBar;
     private Button mBtnSend;
     private IntentFilter intentFilter;
     private MyReceiver myReceiver;
@@ -24,6 +28,11 @@ public class LocalBoardcastActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_boardcast);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("广播");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(LocalBoardcastActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnSend = findViewById(R.id.btn_send);
         mBtnSend.setOnClickListener(this);

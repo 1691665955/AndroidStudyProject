@@ -1,20 +1,21 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.gridview.GridViewActivity;
 import com.study.mz.study.jump.AActivity;
 import com.study.mz.study.listview.ListViewActivity;
 import com.study.mz.study.recyclerview.RecyclerViewActivity;
 
-public class UIActivity extends AppCompatActivity {
+public class UIActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private Button mBtnTextView;
     private Button mBtnButton;
     private Button mBtnEditText;
@@ -38,6 +39,7 @@ public class UIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui);
 
+        mActionBar = findViewById(R.id.action_bar);
         mBtnTextView = findViewById(R.id.btn_TextView);
         mBtnButton = findViewById(R.id.btn_Button);
         mBtnEditText = findViewById(R.id.btn_btn_EditText);
@@ -56,6 +58,10 @@ public class UIActivity extends AppCompatActivity {
         mBtnLifeCycle = findViewById(R.id.btn_LifeCycle);
         mBtnJump = findViewById(R.id.btn_Jump);
         setListeners();
+
+        mActionBar.setStyle("UI");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(UIActivity.this,getResources().getColor(R.color.colorPrimary),0);
     }
 
     private void setListeners() {

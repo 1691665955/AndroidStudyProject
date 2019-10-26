@@ -12,10 +12,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 import com.study.mz.study.util.ToastUtil;
 
-public class ProgressActivity extends AppCompatActivity {
+public class ProgressActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private ProgressBar mProgressBar3;
     private Button mBtnStart;
     private Button mBtnProgressDialog1;
@@ -25,6 +30,11 @@ public class ProgressActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("Progress");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(ProgressActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mProgressBar3 = findViewById(R.id.pb3);
         mBtnStart = findViewById(R.id.btn_start);

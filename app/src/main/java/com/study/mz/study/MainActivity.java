@@ -1,23 +1,24 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.study.mz.study.boardcast.BoardcastActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.boardcast.LocalBoardcastActivity;
 import com.study.mz.study.datastorage.DataStoregeActivity;
 import com.study.mz.study.fragment.ContainerActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MZBaseActivity {
 
     private Button mBtnUI,mBtnFragment,mBtnEvent,mBtnHandler,mBtnData,mBtnBoardcast,mBtnHttp;
+    private MZActionBar mActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.setTitle("主页");
 
+        mActionBar = findViewById(R.id.action_bar);
         mBtnUI = findViewById(R.id.btn_ui);
         mBtnFragment = findViewById(R.id.btn_fragment);
         mBtnEvent = findViewById(R.id.btn_event);
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         mBtnBoardcast = findViewById(R.id.btn_boardcast);
         mBtnHttp = findViewById(R.id.btn_http);
         setListener();
+
+        mActionBar.setStyle("首页");
+//        mActionBar.setBackViewIcon(R.drawable.back,null);
+        mActionBar.hiddenBackView(true);
+        StatusBarUtil.setColor(MainActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         //获取读写权限
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);

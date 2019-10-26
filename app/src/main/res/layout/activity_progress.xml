@@ -3,67 +3,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="15dp">
+    android:gravity="center_horizontal">
 
-    <ProgressBar
-        android:id="@+id/pb1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <ProgressBar
-        android:id="@+id/pb2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.ProgressBar"
-        android:layout_marginTop="10dp"/>
-
-    <ProgressBar
-        android:id="@+id/pb3"
+    <com.mz.mzlibrary.widget.MZActionBar
+        android:id="@+id/action_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_marginTop="10dp"
-        android:max="100"
-        android:progress="10" />
+        android:layout_height="wrap_content"/>
 
-    <ProgressBar
-        android:id="@+id/pb4"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Material.ProgressBar.Horizontal"
-        android:layout_marginTop="10dp"
-        android:max="100"
-        android:progress="30"
-        android:secondaryProgress="50" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="模拟进度"
-        android:layout_marginTop="10dp"/>
+        <ProgressBar
+            android:id="@+id/pb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <ProgressBar
-        android:id="@+id/pb5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/MyProgressBar"
-        android:layout_marginTop="10dp"/>
+        <ProgressBar
+            android:id="@+id/pb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.ProgressBar"
+            android:layout_marginTop="10dp"/>
 
-    <Button
-        android:id="@+id/btn_progress_dialog1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PorgressDialog1"
-        android:textAllCaps="false"
-        android:layout_marginTop="10dp"/>
+        <ProgressBar
+            android:id="@+id/pb3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:progress="10" />
 
-    <Button
-        android:id="@+id/btn_progress_dialog2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PorgressDialog2"
-        android:textAllCaps="false"
-        android:layout_marginTop="10dp"/>
+        <ProgressBar
+            android:id="@+id/pb4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:progress="30"
+            android:secondaryProgress="50" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="模拟进度"
+            android:layout_marginTop="10dp"/>
+
+        <ProgressBar
+            android:id="@+id/pb5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyProgressBar"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_progress_dialog1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PorgressDialog1"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_progress_dialog2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PorgressDialog2"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
 </LinearLayout>

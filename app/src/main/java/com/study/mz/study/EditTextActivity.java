@@ -1,7 +1,5 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,7 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class EditTextActivity extends AppCompatActivity {
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
+
+public class EditTextActivity extends MZBaseActivity {
+    private MZActionBar mActionBar;
     private Button mBtnLogin;
     private EditText mEtUserName;
     private EditText mEtPassword;
@@ -20,6 +24,11 @@ public class EditTextActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_text);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("EditText");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(EditTextActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnLogin = findViewById(R.id.login);
         mBtnLogin.setOnClickListener(new View.OnClickListener() {

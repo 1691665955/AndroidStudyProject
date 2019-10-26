@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <com.mz.mzlibrary.widget.MZActionBar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"

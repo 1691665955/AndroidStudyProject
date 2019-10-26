@@ -1,6 +1,5 @@
 package com.study.mz.study.listview;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,16 +7,26 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.R;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 
-public class ListViewActivity extends Activity {
+public class ListViewActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private ListView mLv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("ListView");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(ListViewActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mLv1 = findViewById(R.id.lv_1);
         mLv1.setAdapter(new MyListAdapter(ListViewActivity.this));

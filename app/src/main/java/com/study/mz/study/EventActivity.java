@@ -1,23 +1,30 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.util.ToastUtil;
 
-public class EventActivity extends AppCompatActivity implements View.OnClickListener {
+public class EventActivity extends MZBaseActivity implements View.OnClickListener {
 
+    private MZActionBar mActionBar;
     private Button mBtnEvent, mBtnMy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("Event");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(EventActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnEvent = findViewById(R.id.btn_event);
         //内部类

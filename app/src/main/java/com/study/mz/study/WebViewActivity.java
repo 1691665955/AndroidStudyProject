@@ -1,24 +1,32 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class WebViewActivity extends AppCompatActivity {
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 
+public class WebViewActivity extends MZBaseActivity {
+
+    private MZActionBar mActionBar;
     private WebView mWvMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("WebView");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(WebViewActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mWvMain = findViewById(R.id.wv);
         //加载本地Html

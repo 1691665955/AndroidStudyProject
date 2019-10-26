@@ -1,7 +1,5 @@
 package com.study.mz.study;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,16 +8,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
+import com.study.mz.study.boardcast.LocalBoardcastActivity;
 import com.study.mz.study.util.ToastUtil;
 
-public class AlertDialogActivity extends AppCompatActivity {
+public class AlertDialogActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private Button mBtnDialog1,mBtnDialog2,mBtnDialog3,mBtnDialog4,mBtnDialog5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert_dialog);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("AlertDialog");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(AlertDialogActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mBtnDialog1 = findViewById(R.id.btn_dialog_1);
         mBtnDialog2 = findViewById(R.id.btn_dialog_2);

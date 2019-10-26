@@ -1,14 +1,17 @@
 package com.study.mz.study.fragment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.R;
+import com.study.mz.study.UIActivity;
 
-public class ContainerActivity extends AppCompatActivity implements AFragment.IOnMessageClick {
+public class ContainerActivity extends MZBaseActivity implements AFragment.IOnMessageClick {
 
+    private MZActionBar mzActionBar;
     private TextView mTvTitle;
     private AFragment aFragment;
 
@@ -16,6 +19,11 @@ public class ContainerActivity extends AppCompatActivity implements AFragment.IO
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
+
+        mzActionBar = findViewById(R.id.action_bar);
+        mzActionBar.setStyle("FragmentFragmentFragmentFragmentFragment");
+        mzActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(ContainerActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mTvTitle = findViewById(R.id.tv_title);
 
