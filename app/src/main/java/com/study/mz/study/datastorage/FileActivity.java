@@ -7,8 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.jaeger.library.StatusBarUtil;
+import com.mz.mzlibrary.MZBaseActivity;
+import com.mz.mzlibrary.widget.MZActionBar;
 import com.study.mz.study.R;
 
 import java.io.File;
@@ -17,8 +18,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class FileActivity extends AppCompatActivity {
+public class FileActivity extends MZBaseActivity {
 
+    private MZActionBar mActionBar;
     private EditText mEtName;
     private Button mBtnSave,mBtnShow;
     private TextView mTvShow;
@@ -28,6 +30,11 @@ public class FileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file);
+
+        mActionBar = findViewById(R.id.action_bar);
+        mActionBar.setStyle("File");
+        mActionBar.setBackViewIcon(R.drawable.back,null);
+        StatusBarUtil.setColor(FileActivity.this,getResources().getColor(R.color.colorPrimary),0);
 
         mEtName = findViewById(R.id.et_name);
         mBtnSave = findViewById(R.id.btn_save);
