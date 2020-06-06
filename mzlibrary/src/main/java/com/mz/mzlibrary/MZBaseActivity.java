@@ -5,7 +5,6 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.billy.android.swipe.SmartSwipeBack;
 import com.jaeger.library.StatusBarUtil;
 
 public class MZBaseActivity extends AppCompatActivity {
@@ -14,8 +13,6 @@ public class MZBaseActivity extends AppCompatActivity {
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
         setStatusBar();
-
-        SmartSwipeBack.activityStayBack(getApplication(),null);
     }
 
     protected void setStatusBar() {
